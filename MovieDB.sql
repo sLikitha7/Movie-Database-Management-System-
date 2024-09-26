@@ -1,9 +1,9 @@
--- Creating database
+--(Creating Database)
 CREATE DATABASE MovieDB;
 
 USE MovieDB;
 
--- Creating Movies table
+-- (Creating Movies table)
 CREATE TABLE Movies (
     movie_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -16,27 +16,27 @@ CREATE TABLE Movies (
     rating DECIMAL(3, 1)
 );
 
--- Create the Actors table
+-- (Create the Actors table)
 CREATE TABLE Actors (
     actor_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     birthdate DATE NOT NULL
 );
 
--- Create the Directors table
+-- (Create the Directors table)
 CREATE TABLE Directors (
     director_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     birthdate DATE NOT NULL
 );
 
--- Create the Genres table
+-- (Create the Genres table)
 CREATE TABLE Genres (
     genre_id INT AUTO_INCREMENT PRIMARY KEY,
     genre_name VARCHAR(100) NOT NULL
 );
 
--- Create the Reviews table
+-- (Create the Reviews table)
 CREATE TABLE Reviews (
     review_id INT AUTO_INCREMENT PRIMARY KEY,
     movie_id INT,
@@ -46,7 +46,7 @@ CREATE TABLE Reviews (
     FOREIGN KEY (movie_id) REFERENCES Movies(movie_id)
 );
 
-
+--(Inserting Values)
 INSERT INTO Movies (title, release_date, runtime, language, actor_id, director_id, genre_id, rating)
 VALUES
 ('The Silent Warrior', '2020-03-14', 120, 'English', 1, 1, 1, 8.2),
